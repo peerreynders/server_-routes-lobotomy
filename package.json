@@ -1,0 +1,31 @@
+{
+  "name": "server_-routes-lobotomy",
+  "type": "module",
+  "scripts": {
+    "dev": "vinxi dev",
+    "build": "vinxi build",
+    "start": "vinxi start",
+    "version": "vinxi version"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/peerreynders/server_-routes-lobotomy"
+  },
+  "keywords": [],
+  "author": "Peer Reynders",
+  "license": "MIT",
+  "homepage": "https://github.com/peerreynders/server_-routes-lobotomy#readme",
+  "bugs": {
+    "url": "https://github.com/peerreynders/server_-routes-lobotomy/issues"
+  },  "dependencies": {
+    "@solidjs/meta": "^0.29.2",
+    "@solidjs/router": "^0.13.2",
+    "@solidjs/start": "^1.0.0-rc.0",
+    "nanoid": "^5.0.7",
+    "solid-js": "^1.8.16",
+    "vinxi": "^0.3.10"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
