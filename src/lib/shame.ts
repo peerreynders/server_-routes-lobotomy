@@ -19,18 +19,11 @@ const formatTimeOnly = (() => {
 	return timeOnly.format;
 })();
 
-const formatUTCTimeOnly = (() => {
-	const utcTimeOnly = new Intl.DateTimeFormat([], {
-		timeZone: 'UTC',
-		hour12: false,
-		hour: '2-digit',
-		minute: '2-digit',
-		second: '2-digit',
-		fractionalSecondDigits: 3,
-	});
+const formatISO = (date?: number | Date | undefined) =>
+	typeof date === 'number'
+		? new Date(date).toISOString()
+		: date instanceof Date
+			? date.toISOString()
+			: new Date().toISOString();
 
-	return utcTimeOnly.format;
-})();
-
-export { formatUTCTimeOnly, formatTimeOnly };
-
+export { formatISO, formatTimeOnly };

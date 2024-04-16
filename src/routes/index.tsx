@@ -15,7 +15,7 @@ import { useMessages } from '../components/index/use-messages';
 import { broadcast } from '../api';
 import {
 	formatTimeOnly,
-	formatUTCTimeOnly,
+	formatISO,
 	type FormatTimeFn,
 } from '../lib/shame';
 
@@ -41,7 +41,6 @@ function onMessageInput(event: Event) {
 
 export default function Home() {
 	let formatTime: FormatTimeFn = () => '';
-	let formatUTC: FormatTimeFn = () => '';
 
 	const [store, nextFetch] = useMessages();
 	const refetch = () => {
@@ -56,7 +55,6 @@ export default function Home() {
 
 	onMount(() => {
 		formatTime = formatTimeOnly;
-		formatUTC = formatUTCTimeOnly;
 		// trigger first fetch
 		refetch();
 	});
@@ -103,7 +101,7 @@ export default function Home() {
 						<For each={store().messages}>
 							{(message) => (
 								<li>
-									<time datetime={formatUTC(message.timestamp)}>
+									<time datetime={formatISO(message.timestamp)}>
 										{formatTime(message.timestamp)}
 									</time>{' '}
 									{message.body}
